@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="ClientApp\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LearningPlatform.Api\LearningPlatform.Api.csproj" />
+      <ProjectReference Include="..\LearningPlatform.Authentication\LearningPlatform.Authentication.csproj" />
+      <ProjectReference Include="..\LearningPlatform.Database\LearningPlatform.Database.csproj" />
+    </ItemGroup>
+
+</Project>
