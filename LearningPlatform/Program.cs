@@ -18,6 +18,11 @@ try
     builder.Services.AddAppAuthentication(builder.Configuration);
     builder.Services.AddApi();
     builder.Services.AddCore();
+    
+    builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+    {
+        builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    }));
 
     var app = builder.Build();
     
