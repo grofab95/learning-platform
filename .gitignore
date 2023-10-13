@@ -400,6 +400,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-EasyTalker/ClientApp/.idea
-EasyTalker/ClientApp/node_modules
-EasyTalker/ClientApp/build
+LearningPlatform/appsettings.json
+
+LearningPlatform/ClientApp/.idea
+LearningPlatform/ClientApp/node_modules
+LearningPlatform/ClientApp/build

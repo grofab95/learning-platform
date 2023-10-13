@@ -34,6 +34,8 @@ try
     app.UseCors();
     app.UseStaticFiles();
     app.UseRouting();
+
+    app.UseHttpsRedirection();
     
     app.ConfigureApi();
     app.ConfigureAuthorization();
