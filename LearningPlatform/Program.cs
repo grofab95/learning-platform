@@ -20,18 +20,21 @@ try
     builder.Services.AddCore();
 
     var app = builder.Build();
+    
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseHsts();
+    }
+    
+    app.UseCors();
+    app.UseStaticFiles();
+    app.UseRouting();
+    
     app.ConfigureApi();
     app.ConfigureAuthorization();
     
-    app.UseCors(builder =>
-    {
-        builder
-            .WithOrigins("http://localhost:3000", "https://localhost:3000")
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
-    });
-
+    app.MapFallbackToFile("index.html"); 
+    
     app.Run();
 }
 catch (Exception e)
