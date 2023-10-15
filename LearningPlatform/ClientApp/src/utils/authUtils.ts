@@ -64,12 +64,12 @@ export const deleteTokens = () => {
 
 export const getLoggedUserId = () => {
     const token = getAccessToken();
-    if (token === "") return [];
+    if (token === "") return "";
 
     const loggedUserId = jwt.decodeToken<any>(token)[ClaimType.NAME_IDENTIFIER];
     console.log("getLoggedUserId", loggedUserId);
 
-    return loggedUserId; // jwt.decodeToken(token)[ClaimType.NAME_IDENTIFIER];
+    return loggedUserId as string; // jwt.decodeToken(token)[ClaimType.NAME_IDENTIFIER];
 };
 
 // export const getRoles = (): string[] => {

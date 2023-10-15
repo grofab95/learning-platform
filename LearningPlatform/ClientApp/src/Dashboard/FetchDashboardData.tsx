@@ -10,8 +10,10 @@ const FetchDashboardData: React.FC = () => {
         console.log("fetchData");
 
         const loggedUserId = getLoggedUserId();
-        dispatch(getUsers());
-        dispatch(getUser(loggedUserId));
+        if (loggedUserId.length > 0) {
+            dispatch(getUsers());
+            dispatch(getUser(loggedUserId));
+        }
     }, [dispatch]);
 
     React.useEffect(fetchData, [fetchData]);
