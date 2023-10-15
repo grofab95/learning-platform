@@ -31,7 +31,7 @@ try
         app.UseHsts();
     }
     
-    app.UseCors();
+    app.UseCors("corsapp");
     app.UseStaticFiles();
     app.UseRouting();
 
