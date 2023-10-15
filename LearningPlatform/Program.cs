@@ -3,6 +3,7 @@ using LearningPlatform.Authentication.Extensions;
 using LearningPlatform.Core.Extensions;
 using LearningPlatform.Database.Extensions;
 using LearningPlatform.Logging;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Serilog;
 
 SerilogHelpers.AddLoggerConfiguration();
@@ -19,10 +20,12 @@ try
     builder.Services.AddApi();
     builder.Services.AddCore();
     
-    builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
-    {
-        builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-    }));
+    builder.Services.AddCors(x => x.AddDefaultPolicy(new CorsPolicyBuilder()
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials()
+        .SetIsOriginAllowed(h => true)
+        .Build()));
 
     var app = builder.Build();
     
@@ -31,7 +34,7 @@ try
         app.UseHsts();
     }
     
-    app.UseCors("corsapp");
+    app.UseCors();
     app.UseStaticFiles();
     app.UseRouting();
 
