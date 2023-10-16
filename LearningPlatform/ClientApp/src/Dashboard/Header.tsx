@@ -22,11 +22,10 @@ const Header: React.FC = () => {
                     activeKey={location.pathname.replace("/", "")}
                 >
                     <NavItem to="/home" text="Home" />
-                    <NavItem to="/users" text="Users" />
-                    <NavItem to="/items" text="Items" />
-                    <NavItem to="/releases" text="Releases" />
-                    <NavItem to="/categories" text="Categories" />
-                    <NavItem to="/parameters" text="Parameters" />
+                    <NavItem to="/users" text="Words" />
+                    <NavItem to="/items" text="Add Words" />
+                    <NavItem to="/releases" text="Quiz" />
+                    <NavItem to="/categories" text="English Tenses" />
                 </Nav>
                 <Nav>
                     <NavDropdown
