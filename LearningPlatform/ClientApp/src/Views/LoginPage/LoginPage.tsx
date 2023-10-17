@@ -65,7 +65,7 @@ const LoginPage: React.FC = () => {
                     >
                         <Col lg="12">
                             <Form.Group>
-                                <Form.Label>Email !!!!</Form.Label>
+                                <Form.Label>Email</Form.Label>
                                 <Form.Control
                                     type="text"
                                     id="email"
