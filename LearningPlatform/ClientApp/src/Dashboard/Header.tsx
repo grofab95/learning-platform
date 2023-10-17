@@ -37,7 +37,9 @@ const Header: React.FC = () => {
                                         width: "40px",
                                         borderRadius: "50%",
                                     }}
-                                    src={"https://github.com/mshaaban0.png"}
+                                    src={
+                                        "https://avatars.githubusercontent.com/u/42341432?s=400&u=72b92a3d6667326c365e8ee355acd311e80019f6&v=4"
+                                    }
                                     alt="user pic"
                                 />
                                 Fabian
