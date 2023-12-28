@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- feature/dotnet-upgrade
 
 pool:
   vmImage: 'windows-latest'
